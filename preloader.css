@@ -41,6 +41,10 @@
     font-family: 'Roboto', sans-serif;
     color: aliceblue;
     position: absolute;
+    transition: text-shadow 300ms linear;
+}
+.lighted{
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 2px 2px 2px rgba(206,89,55,0), -10px 2px 2px rgba(206,206,206,0.14), 1px 1px 2px rgba(206,206,206,0.14), 1px 1px 2px rgba(206,206,206,0.14);
 }
 .summator {
     position: absolute;
