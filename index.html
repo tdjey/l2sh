@@ -33,7 +33,7 @@
     <script>
         let animArgs = {
             radius: logo.offsetWidth * 0.3,
-            speed: 0.4                             
+            speed: 0.7                         
         }
 
         function changeSize() {
@@ -85,11 +85,11 @@
                 } else
                     elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
                 let rotation = Number.parseFloat(elem.style.transform.slice(8, elem.style.transform.length - 1));
-                if ((rotation > 130 && rotation < 145) || (rotation > -45 && rotation < -30)) {
+                if ((rotation > 130 && rotation < 145)){
                     for (let letter of document.querySelectorAll(".letter")) {
                         letter.classList.add("lighted");
                     }
-                } else {
+                } else if  (rotation > -45 && rotation < -30) {
                     for (let letter of document.querySelectorAll(".letter")) {
                         letter.classList.remove("lighted");
                     }
