@@ -31,63 +31,73 @@
         </div>
     </div>
     <script>
-        logo.style.height = logo.offsetWidth + "px";
-        let preloaderAnim = window.requestAnimationFrame(rotateNext);
-        let lettersArr = document.querySelectorAll(".letter");
-            for (let letter of lettersArr){
-                letter.style.fontSize = logo.offsetWidth * 0.2 + "px";
-            }
-        
-        var $ = {
-            radius: logo.offsetWidth * 0.3, // радиус окружности 
-            speed: 1 // скорость/задержка ( в js это мс, например 10 мс = 100 кадров в секунду)
+        let animArgs = {
+            radius: logo.offsetWidth * 0.3,
+            speed: 0.4                             
         }
-        window.addEventListener("resize", function(){
+
+        function changeSize() {
             logo.style.height = logo.offsetWidth + "px";
-            $ = {
-            radius: logo.offsetWidth * 0.3, // радиус окружности 
-            speed: 1 // скорость/задержка ( в js это мс, например 10 мс = 100 кадров в секунду)
-        }
             let lettersArr = document.querySelectorAll(".letter");
-            for (let letter of lettersArr){
+            for (let letter of lettersArr) {
                 letter.style.fontSize = logo.offsetWidth * 0.2 + "px";
             }
+            animArgs.radius = logo.offsetWidth * 0.3;
+        }
+        changeSize();
+        window.addEventListener("resize", function() {
+            changeSize();
         });
-        
-        var f = 0,
-            f2 = 0;
-        var s = 2 * Math.PI / 180; //Вычислим угол
-        function rotateNext() {
+
+        let preloaderAnim;
+
+        function preloaderAnimation() {
+            preloaderAnim = window.requestAnimationFrame(rotateNext),
+                tmp = 0,
+                tmp2 = 0,
+                s = 2 * Math.PI / 180;
             let firstBall = document.querySelector(".ball.first");
             let secondBall = document.querySelector(".ball.second");
-            f += s * $.speed; // приращение аргумента
-            let elem = firstBall;
-            elem.style.left = $.radius * Math.sin(f) * 0.8 + 'px'; // меняем координаты элемента, подобно тому как мы это делали в школе в декартовой системе координат. Правда, в данном случае используется полярная система координат, изменяя угол
-            elem.style.top = $.radius * Math.cos(f) + 'px';
-            let x = Number.parseInt(elem.style.left),
-                y = Number.parseInt(elem.style.top),
-                len = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)),
+
+            function rotateNext() {
+                tmp += s * animArgs.speed;
+                let elem = firstBall;
+                elem.style.left = animArgs.radius * Math.sin(tmp) * 0.8 + 'px';
+                elem.style.top = animArgs.radius * Math.cos(tmp) + 'px';
+                let x = Number.parseInt(elem.style.left),
+                    y = Number.parseInt(elem.style.top),
+                    len = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)),
+                    ang = Math.asin(y / len);
+                if (x < 0) {
+                    elem.style.transform = "rotateZ(" + (180 - ang * 57.2958) + "deg)";
+                } else
+                    elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
+                elem = secondBall;
+                tmp2 -= s * animArgs.speed;
+                elem.style.left = animArgs.radius * Math.sin(tmp2) * 0.8 + 'px';
+                elem.style.top = animArgs.radius * Math.cos(tmp2) + 'px';
+                x = Number.parseInt(elem.style.left);
+                y = Number.parseInt(elem.style.top);
+                len = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
                 ang = Math.asin(y / len);
-            if (x < 0) {
-                elem.style.transform = "rotateZ(" + (180 - ang * 57.2958) + "deg)";
-            } else
-                elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
-            elem = secondBall;
-            f2 -= s * $.speed;
-            elem.style.left = $.radius * Math.sin(f2) * 0.8 + 'px'; // меняем координаты элемента, подобно тому как мы это делали в школе в декартовой системе координат. Правда, в данном случае используется полярная система координат, изменяя угол
-            elem.style.top = $.radius * Math.cos(f2) + 'px';
-            x = Number.parseInt(elem.style.left);
-            y = Number.parseInt(elem.style.top);
-            len = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-            ang = Math.asin(y / len);
-            if (x < 0) {
-                elem.style.transform = "rotateZ(" + (180 - ang * 57.2958) + "deg)";
-            } else
-                elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
-
-
-            requestAnimationFrame(rotateNext);
+                if (x < 0) {
+                    elem.style.transform = "rotateZ(" + (180 - ang * 57.2958) + "deg)";
+                } else
+                    elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
+                let rotation = Number.parseFloat(elem.style.transform.slice(8, elem.style.transform.length - 1));
+                if ((rotation > 130 && rotation < 145) || (rotation > -45 && rotation < -30)) {
+                    for (let letter of document.querySelectorAll(".letter")) {
+                        letter.classList.add("lighted");
+                    }
+                } else {
+                    for (let letter of document.querySelectorAll(".letter")) {
+                        letter.classList.remove("lighted");
+                    }
+                }
+                requestAnimationFrame(rotateNext);
+            }
         }
+        preloaderAnimation();
 
     </script>
 </body>
