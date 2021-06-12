@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Preloader</title>
+    <link rel="stylesheet" href="preloader.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="logo" class="logo">
+        <div class="logo_border">
+            <div class="logo_content">
+                <div class="letter" style="top: 5%; left: 5%; transform: translateX(16%) translateY(-9%) rotateZ(45deg);">Ф</div>
+                <div class="letter" style="top: 5%; right: 5%; transform: translateX(-38%) translateY(-13%) rotateZ(45deg);">2</div>
+                <div class="letter" style="bottom: 5%; left: 5%; transform: translateX(14%) translateY(-1%) rotateZ(45deg);">Ш</div>
+                <div class="letter" style="bottom: 5%; right: 5%; transform: translateX(-17%) translateY(-2%) rotateZ(45deg);">М</div>
+                <div class="summator">
+                    <div class="cont_ball">
+                        <div class="cont_left">
+                            <div class="ball first"></div>
+                        </div>
+                        <div class="cont_right">
+                            <div class="ball second"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        logo.style.height = logo.offsetWidth + "px";
+        let preloaderAnim = window.requestAnimationFrame(rotateNext);
+        let lettersArr = document.querySelectorAll(".letter");
+            for (let letter of lettersArr){
+                letter.style.fontSize = logo.offsetWidth * 0.2 + "px";
+            }
+        
+        var $ = {
+            radius: logo.offsetWidth * 0.3, // радиус окружности 
+            speed: 1 // скорость/задержка ( в js это мс, например 10 мс = 100 кадров в секунду)
+        }
+        window.addEventListener("resize", function(){
+            logo.style.height = logo.offsetWidth + "px";
+            $ = {
+            radius: logo.offsetWidth * 0.3, // радиус окружности 
+            speed: 1 // скорость/задержка ( в js это мс, например 10 мс = 100 кадров в секунду)
+        }
+            let lettersArr = document.querySelectorAll(".letter");
+            for (let letter of lettersArr){
+                letter.style.fontSize = logo.offsetWidth * 0.2 + "px";
+            }
+        });
+        
+        var f = 0,
+            f2 = 0;
+        var s = 2 * Math.PI / 180; //Вычислим угол
+        function rotateNext() {
+            let firstBall = document.querySelector(".ball.first");
+            let secondBall = document.querySelector(".ball.second");
+            f += s * $.speed; // приращение аргумента
+            let elem = firstBall;
+            elem.style.left = $.radius * Math.sin(f) * 0.8 + 'px'; // меняем координаты элемента, подобно тому как мы это делали в школе в декартовой системе координат. Правда, в данном случае используется полярная система координат, изменяя угол
+            elem.style.top = $.radius * Math.cos(f) + 'px';
+            let x = Number.parseInt(elem.style.left),
+                y = Number.parseInt(elem.style.top),
+                len = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)),
+                ang = Math.asin(y / len);
+            if (x < 0) {
+                elem.style.transform = "rotateZ(" + (180 - ang * 57.2958) + "deg)";
+            } else
+                elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
+            elem = secondBall;
+            f2 -= s * $.speed;
+            elem.style.left = $.radius * Math.sin(f2) * 0.8 + 'px'; // меняем координаты элемента, подобно тому как мы это делали в школе в декартовой системе координат. Правда, в данном случае используется полярная система координат, изменяя угол
+            elem.style.top = $.radius * Math.cos(f2) + 'px';
+            x = Number.parseInt(elem.style.left);
+            y = Number.parseInt(elem.style.top);
+            len = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+            ang = Math.asin(y / len);
+            if (x < 0) {
+                elem.style.transform = "rotateZ(" + (180 - ang * 57.2958) + "deg)";
+            } else
+                elem.style.transform = "rotateZ(" + ang * 57.2958 + "deg)";
+
+
+            requestAnimationFrame(rotateNext);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+.ball {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    border-radius: 100px;
+    background: rgb(247, 247, 247);
+    background: linear-gradient(90deg, rgba(247, 247, 247, 1) 0%, rgba(206, 206, 206, 1) 21%, rgba(151, 151, 151, 1) 51%, rgba(102, 102, 102, 1) 100%);
+}
+
+
+
+.logo {
+    width: 20%;
+    height: 0;
+    margin: auto;
+    margin-top: 150px;
+    transform: rotateZ(-45deg);
+    border: solid 2px #A5A5A5;
+    box-shadow: 0 4px 2px 2px #818181;
+    box-sizing: border-box;
+}
+
+.logo_border {
+    width: 94%;
+    height: 94%;
+    margin: auto;
+    margin-top: 3%;
+    border: solid 2px black;
+    box-sizing: border-box;
+}
+
+.logo_content {
+    width: 96%;
+    height: 96%;
+    margin: 2% auto;
+    background-color: black;
+    position: relative;
+}
+.letter{
+    font-family: 'Roboto', sans-serif;
+    color: aliceblue;
+    position: absolute;
+}
+.summator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+    width: 30%;
+    height: 30%;
+    background-image: url(images/sum.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.cont_ball{
+    width: 30%;
+    height: 30%;
+    position: relative;
+    top: 30%;
+}
+
+.cont_left, .cont_right{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cont_left{
+    transform: rotateZ(50deg);
+    z-index: 1;
+}
+.cont_right{
+    transform: rotateZ(-50deg);
+    z-index: 0;
+}
