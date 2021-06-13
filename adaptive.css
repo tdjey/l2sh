@@ -1,0 +1,29 @@
+@media (max-width: 800px){
+    .header_card{
+        font-size: 80%;
+    }
+}
+
+
+@media (max-width: 750px){
+    .id{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+    }
+    .service{
+/*        flex-direction: row;    */
+        width: 100%;
+    }
+    .lower_row{
+        width: 100%;
+    }
+    .sidebar{
+        display: none;
+    }
+    .main_content{
+        width: 100%;
+        border: none;
+    }
+}
