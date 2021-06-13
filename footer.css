@@ -1,0 +1,32 @@
+footer {
+    width: 100%;
+    background-color: bisque;
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+}
+footer .container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+footer .card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 33%;
+}
+.icons{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    background-color: darkgoldenrod;
+}

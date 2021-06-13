@@ -12,7 +12,7 @@
     border-radius: 15px;
 }
 
-.card:not(:first-child) {
+.sidebar .card:not(:first-child) {
     margin-top: 20px;
 }
 
