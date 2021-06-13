@@ -12,7 +12,7 @@
     border-radius: 15px;
 }
 
-.card.vmsh {
+.card:not(:first-child) {
     margin-top: 20px;
 }
 

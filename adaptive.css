@@ -27,3 +27,9 @@
         border: none;
     }
 }
+
+@media (max-width: 500px){
+    .header_card{
+        font-size: 60%;
+    }
+}

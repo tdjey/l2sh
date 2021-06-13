@@ -72,13 +72,14 @@ main {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    padding-bottom: 100px;
 }
 
 .main_content {
     width: 70%;
     min-height: 100%;
     border-left: black solid 2px;
+    background-color: azure;
+    padding-bottom: 100px;
 }
 
 .wrapper {
@@ -99,11 +100,30 @@ footer {
 
 .breadcrumbs li {
     display: inline-block;
+    font-size: 120%;
 }
 
-.news_card {
-    width: 200px;
-    height: 400px;
+article:not(:first-of-type){
+    margin-top: 20px;
+}
+
+article{
+    width: 80%;
     margin: auto;
-    background-color: antiquewhite;
+    border: dotted 2px black;
+    padding: 20px;
+    text-align: center;
+}
+
+article .data{
+    display: inline;
+    text-align: end;
+    font-style: oblique;
+}
+article h4{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+article h4 + p{
+    margin-top: 5px;
 }
