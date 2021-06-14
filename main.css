@@ -5,6 +5,10 @@ html {
     margin: 0;
     font-size: 100%;
 }
+body{
+    background-image: url(images/background1.jpg);
+    background-repeat: repeat;
+}
 main {
     flex: 1 1 100%;
     width: 100%;
@@ -17,7 +21,6 @@ main {
     width: 70%;
     min-height: 100%;
     border-left: black solid 2px;
-    background-color: azure;
     padding-bottom: 100px;
 }
 
@@ -29,6 +32,7 @@ main {
 
 .breadcrumbs {
     list-style: none;
+    background-color: aquamarine;
 }
 
 .breadcrumbs li {
@@ -41,6 +45,7 @@ article:not(:first-of-type){
 }
 
 article{
+    background-color: aquamarine;
     width: 80%;
     margin: auto;
     border: dotted 2px black;
