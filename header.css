@@ -8,12 +8,13 @@ header {
 }
 
 .id {
-    width: 30%;
+    width: 45%;
     padding: 5px;
     box-sizing: border-box;
     border: solid 2px black;
     height: 100%;
     display: flex;
+    align-items: center;
 }
 
 .id img{
@@ -28,10 +29,11 @@ header {
     flex-direction: column;
     text-align: center;
     width: 100%;
+/*    align-items: center;*/
 }
 
 .service {
-    width: 70%;
+    width: 55%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -39,43 +41,20 @@ header {
     position: relative;
 }
 
-.service:hover {
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-}
-
-.service:active {
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-}
-
-.navigation {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    align-items: flex-end;
+.service .cont{
     width: 100%;
-    overflow-x: scroll;
+    display: flex;
+    height: 100%;
 }
+
 
 .header_card {
-    display: block;
-    padding: 5px 2px 1px 2px;
+    flex: 1 0 auto;
     text-align: center;
-    flex-grow: 1;
     border: 2px solid black;
-    border-radius: 90px 90px 10px 10px;
-    white-space: nowrap;
-    padding: 5px 10px 0 10px;
 }
-
-a.header_card:hover {
-    padding-top: 1%;
-    font-size: 110%;
-}
-
-.selected {
-    border-bottom: none;
-    background-color: azure;
+.middle{
+    flex: 2 0 auto;
+    text-align: center;
+    border: 2px solid black;
 }
