@@ -44,7 +44,7 @@ article:not(:first-of-type){
 }
 
 article{
-    background-color: black;
+    background-color: yellow;
     width: 80%;
     margin: auto;
     border: dotted 2px black;
