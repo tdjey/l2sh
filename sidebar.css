@@ -41,7 +41,7 @@
     background-color: aqua;
     border-radius: 0 10px 10px 0;
     padding: 2% 0 2% 0;
-    transition: 1s all ease-out;
+    transition: 1s transform ease-out;
     display: none;
     -ms-transform: translate3d(0,0,0);
   -webkit-transform: translate3d(0,0,0);
