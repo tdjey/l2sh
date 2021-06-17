@@ -8,9 +8,9 @@
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid black;
+    border: 2px solid green;
     border-radius: 15px;
-    background-color: black;
+    background-color:yellow;
 }
 
 .sidebar .card:not(:first-child) {
