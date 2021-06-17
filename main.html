@@ -22,13 +22,16 @@
         <div class="flag">Контакты</div>
     </div>
     <header>
-        <div class="id"><img href="images/emb.png"></div>
+        <div class="id">
+            <img src="images/emb.JPG">
+            <div class="id-text">
+                <h2>Лицей "Вторая школа"</h2>
+                <cite>место, где учат и учатся</cite>
+            </div>
+        </div>
         <div class="service">
             <div class="navigation">
-                <a href="#" class="header_card selected">Новости</a>
-                <a href="#" class="header_card">О школе</a>
-                <a href="#" class="header_card">Абитуриентам</a>
-                <a href="#" class="header_card">История</a>
+
             </div>
         </div>
     </header>
@@ -172,6 +175,12 @@
         contactPanel.addEventListener("touchstart", function() {
             contactPanel.classList.toggle("showed");
         })
+        
+        let l2shLabel = document.querySelector(".id img");
+//        l2shLabel.style.height = l2shLabel.offsetWidth + "px";
+//        window.addEventListener("resize", function(){
+//            l2shLabel.style.height = l2shLabel.offsetWidth + "px";
+//        });
     </script>
 </body>
 
