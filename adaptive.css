@@ -7,9 +7,6 @@
 /*        flex-direction: row;    */
         width: 100%;
     }
-    .lower_row{
-        width: 100%;
-    }
     .sidebar{
         display: none;
     }
@@ -22,12 +19,6 @@
     }
     .side_panel{
         display: block;
-    }
-}
-
-@media (max-width: 650px){
-    .service{
-        display: none;
     }
 }
 
