@@ -8,9 +8,15 @@
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid green;
+    border: 4px solid #CDCBA4;
     border-radius: 15px;
-    background-color:yellow;
+    background-color: #E5E7DC;
+}
+
+.sidebar_wrapper{
+    position: sticky;
+    top: 10px;
+    padding-bottom: 20px;
 }
 
 .sidebar .card:not(:first-child) {

@@ -1,11 +1,12 @@
 footer {
     width: 100%;
-    background-color: bisque;
+    background-color: #CDCBA4;
     text-align: center;
     display: block;
     padding: 20px 0 40px 0;
 }
-footer .container{
+
+footer .container {
     width: 100%;
     margin: auto;
     display: flex;
@@ -13,24 +14,32 @@ footer .container{
     flex: 0 0 auto;
     flex-wrap: wrap;
 }
-footer .card{
+
+footer .card {
     display: flex;
     flex-direction: column;
     text-align: center;
     min-width: 33%;
 }
-.icons{
+
+.icons {
     width: 40%;
     margin: auto;
     display: flex;
     justify-content: space-between;
 }
-.icon{
+
+.icon {
     width: 30px;
     height: 30px;
     background-color: darkgoldenrod;
 }
 
-footer .card:not(:first-of-type)){
+footer .card:not(:first-of-type)) {
+    margin-top: 20px;
+}
+
+.build{
+    width: 40%;
     margin-top: 20px;
 }
