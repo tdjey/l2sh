@@ -20,6 +20,12 @@
     .side_panel{
         display: block;
     }
+    .build {
+        width: 90%;
+    }
+    body, html{
+        font-size: 100%;
+    }
 }
 
 /*sidebar*/

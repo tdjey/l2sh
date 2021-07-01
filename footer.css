@@ -23,15 +23,22 @@ footer .card {
 }
 
 .icons {
-    width: 40%;
+    min-width: 40%;
     margin: auto;
     display: flex;
+    align-items: center;
+    align-content: center;
     justify-content: space-between;
+}
+
+.icons .icon:first-child{
+    margin-left: 0;
 }
 
 .icon {
     width: 30px;
     height: 30px;
+    margin-left: 10px;
     background-color: darkgoldenrod;
 }
 

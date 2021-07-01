@@ -58,7 +58,7 @@
 .flag{
     writing-mode: vertical-rl;
     position: absolute;
-    top: 1%;
+    top: 40%;
     right: 0;
     padding: 2% 1% 2% 0;
     transform: translateX(99%);
